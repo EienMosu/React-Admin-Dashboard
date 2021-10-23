@@ -1,5 +1,7 @@
-import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
 import React from "react";
+// Material UI Icons
+import { ArrowDownward, ArrowUpward } from "@material-ui/icons";
+// Styled Components
 import {
   Container,
   Item,

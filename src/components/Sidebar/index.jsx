@@ -24,6 +24,7 @@ import {
   Title,
   Wrapper,
 } from "./Sidebar.styles";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
@@ -32,10 +33,15 @@ const Sidebar = () => {
         <Menu>
           <Title>Dashboard</Title>
           <List>
-            <ListItem>
-              <LineStyle />
-              <Span>Home</Span>
-            </ListItem>
+            <Link
+              to="/"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <ListItem>
+                <LineStyle />
+                <Span>Home</Span>
+              </ListItem>
+            </Link>
             <ListItem>
               <Timeline />
               <Span>Analytics</Span>
@@ -49,14 +55,24 @@ const Sidebar = () => {
         <Menu>
           <Title>Quick Menu</Title>
           <List>
-            <ListItem>
-              <PermIdentity />
-              <Span>Users</Span>
-            </ListItem>
-            <ListItem>
-              <Storefront />
-              <Span>Products</Span>
-            </ListItem>
+            <Link
+              to="/users"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <ListItem>
+                <PermIdentity />
+                <Span>Users</Span>
+              </ListItem>
+            </Link>
+            <Link
+              to="/products"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <ListItem>
+                <Storefront />
+                <Span>Products</Span>
+              </ListItem>
+            </Link>
             <ListItem>
               <AttachMoney />
               <Span>Transactions</Span>

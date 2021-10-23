@@ -15,14 +15,17 @@ import {
 } from "./Topbar.styles";
 // Avatar Image
 import avatar from "../../assets/avatar.jpg";
+import { Link } from "react-router-dom";
 
 const Topbar = () => {
   return (
     <Container>
       <Wrapper>
-        <Left>
-          <Logo>React Admin.</Logo>
-        </Left>
+        <Link to="/" style={{textDecoration: "none"}}>
+          <Left>
+            <Logo>React Admin.</Logo>
+          </Left>
+        </Link>
         <Right>
           <Icons>
             <NotificationsNone />

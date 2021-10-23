@@ -10,7 +10,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-// User Data
+
 
 const Chart = ({ title, data, dataKey, grid }) => {
   return (

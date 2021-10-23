@@ -1,16 +1,16 @@
 import React from "react";
-import { useState } from "react";
 // Styled Components
-import { Container, EditButton, Grid, Image } from "./UserList.styles";
+import { Container, EditButton, Grid, Image } from "./ProductList.styles";
+import { useState } from "react";
 // Material UI Data-Grid
 import { DataGrid } from "@mui/x-data-grid";
-import { userRows } from "../../dataGrid";
+import { productRows } from "../../dataGrid";
 import { DeleteOutline } from "@material-ui/icons";
 // React Router
 import { Link } from "react-router-dom";
 
-const UserList = () => {
-  const [data, setData] = useState(userRows);
+const ProductList = () => {
+  const [data, setData] = useState(productRows);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -19,25 +19,21 @@ const UserList = () => {
   const columns = [
     { field: "id", headerName: "ID", width: 70 },
     {
-      field: "user",
-      headerName: "User",
+      field: "product",
+      headerName: "Product",
       width: 170,
       renderCell: (params) => {
         return (
           <Grid>
-            <Image
-              className="data-img"
-              src={params.row.avatar}
-              alt="jon snow"
-            />
-            {params.row.username}
+            <Image className="data-img" src={params.row.img} alt="jon snow" />
+            {params.row.name}
           </Grid>
         );
       },
     },
     {
-      field: "email",
-      headerName: "Email",
+      field: "stock",
+      headerName: "Stock",
       width: 170,
     },
     {
@@ -46,8 +42,8 @@ const UserList = () => {
       width: 130,
     },
     {
-      field: "transaction",
-      headerName: "Transaction",
+      field: "price",
+      headerName: "Price",
       width: 170,
     },
     {
@@ -57,8 +53,8 @@ const UserList = () => {
       renderCell: (params) => {
         return (
           <>
-            <Link to={`/user/${params.row.id}`}>
-              <EditButton className="data-edit">Edit</EditButton>
+            <Link to={`/product/${params.row.id}`}>
+              <EditButton>Edit</EditButton>
             </Link>
             <DeleteOutline
               style={{ cursor: "pointer" }}
@@ -84,4 +80,4 @@ const UserList = () => {
   );
 };
 
-export default UserList;
+export default ProductList;
